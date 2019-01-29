@@ -40,8 +40,8 @@ def draw(classifier,X_set,y_set,title,xlabel,ylabel):
  
     YPredict = classifier.predict(InputArray).reshape(X1.shape) #平铺所有网格结果的学习数据
     plt.contourf(X1, X2, YPredict, alpha = 0.50, cmap = ListedColormap(('red', 'green'))) #底色 0 红色， 1 绿色
-    # plt.xlim(X1.min(),X1.max()) ##限制X轴坐标的最小/大值
-    # plt.ylim(X2.min(),X2.max()) ##限制Y轴坐标的最小/大值
+    # plt.xlim(X1.min(),X1.max()) ##限制X轴坐标指示的最小/大值
+    # plt.ylim(X2.min(),X2.max()) ##限制Y轴坐标指示的最小/大值
     for i,j in enumerate(np.unique(y_set)):
         tx = y_set == j
         plt.scatter(X_set[tx,0],X_set[tx,1],c = ListedColormap(('red', 'green'))(i), label=j) #绘制散列点
